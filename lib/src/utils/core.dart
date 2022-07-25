@@ -23,7 +23,7 @@ void printInDebug(dynamic obj) {
   }
 }
 
-void execAfterBuild(Function fn) => WidgetsBinding.instance?.addPostFrameCallback((_) => fn());
+void execAfterBuild(Function fn) => WidgetsBinding.instance.addPostFrameCallback((_) => fn());
 
 T? loadThemeData<T>(T? theme, String themeName, T Function() constructor) {
   return theme ?? (GetIt.instance.isRegistered<AppTheme>() ? GetIt.instance<AppTheme>().fetchTheme<T>(themeName) : null) ?? constructor() ?? theme;
